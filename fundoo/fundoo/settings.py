@@ -18,6 +18,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
+
 # Email verification
 EMAIL_USE_TLS = True            # Email Tools true
 EMAIL_HOST = 'smtp.gmail.com'   # SMTP protocol for mail transfer
@@ -102,12 +103,12 @@ CHANNEL_LAYERS = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbname',
-        'USER': 'user',
-        'PASSWORD': 'dsfdsfbdspfus',
-        'HOST': 'endpoint.google.com',
-        'PORT': '1234',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'chatappdb',
+        'USER': 'admin',
+        'PASSWORD': 'Prathamesh',
+        'HOST': 'database-2.cmezjo3htey9.us-east-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 #sagar kadam
@@ -152,3 +153,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # LOGIN_REDIRECT_URL = 'sign_in'
 # LOGOUT_REDIRECT_URL = 'logout'
 CSRF_COOKIE_SECURE = False
+
+
