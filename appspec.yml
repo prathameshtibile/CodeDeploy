@@ -9,7 +9,7 @@ hooks:
       timeout: 300
       runas: root
   AfterInstall:
-    - location: /scripts/change_File.sh
+    - location: /scripts/change_file.sh
       timeout: 300
       runas: root
   ApplicationStart:
