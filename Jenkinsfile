@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Git repo Cloning') {
             steps {
-                git credentialsId: ''https://github.com/prathameshtibile/CodeDeploy.git ''
+                bat ''https://github.com/prathameshtibile/CodeDeploy.git ''
             }
         }
 
