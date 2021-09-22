@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Git repo Cloning') {
+        stage('Git  Clone') {
             steps {
-                git  'git clone https://github.com/prathameshtibile/CodeDeploy.git '
+                git  'https://github.com/prathameshtibile/CodeDeploy.git '
             }
         }
 
