@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
 
-               sh ' rsync -avz -e 'ssh -i /var/lib/jenkins/backend.pem' /var/lib/jenkins/workspace/chatapp-pipeline ec2-user@10.0.2.70:~'
+               sh ' rsync -avz -e 'ssh -i /var/lib/jenkins/backend.pem' /var/lib/jenkins/workspace/chat-pipeline ec2-user@10.0.2.70:~'
                //sh 'ssh -i /var/lib/jenkins/public_instance_key.pem ubuntu@10.0.1.10 "bash /home/ubuntu/chatapp/script/Before_inst.sh"'
                //sh 'ssh -i /var/lib/jenkins/public_instance_key.pem ubuntu@10.0.1.10 "bash /home/ubuntu/chatapp/script/move.sh"'
 
