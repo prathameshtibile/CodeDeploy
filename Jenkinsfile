@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               sh 'ssh -i /var/lib/jenkins/backend.pem ec2-user@10.0.2.70 "bash /home/ec2-user/chatapp/jen.sh "'
+               sh 'ssh -i /var/lib/jenkins/backend.pem ec2-user@10.0.2.70 "bash /var/lib/jenkins/workspace/chat-pipeline/jen.sh ec2-user@10.0.2.70:"'
 
             }
         }
