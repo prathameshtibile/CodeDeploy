@@ -10,10 +10,8 @@ pipeline {
 
         stage('Build') {
             steps {
-
                 sh 'rsync -avz -e 'ssh -i /var/lib/jenkins/backend.pem '/var/lib/jenkins/workspace/chat-pipeline ec2-user@10.0.2.70:~/'
-              
-               }
+            }
         }
         stage('Deploy') {
             steps {
