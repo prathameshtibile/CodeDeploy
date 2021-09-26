@@ -12,6 +12,7 @@ pipeline {
             steps {
                 environment {
                     scannerHome = tool 'sonarqubescanner'
+                }    
             }
         }
         
@@ -19,6 +20,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarqube') {
                     sh "${scannerHome}/bin/sonar-scanner"
+                }    
             }
         }
             
@@ -43,4 +45,4 @@ pipeline {
         }
     }
 }
-}
+
