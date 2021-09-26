@@ -9,21 +9,27 @@ pipeline {
         }
 
         stage('sonarqube') {
-            environment {
-                scannerHome = tool 'sonarqubescanner'
+            steps {
+                environment {
+                    scannerHome = tool 'sonarqubescanner'
             }
         }
+        
+        stage('sonarAnalysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
                     sh "${scannerHome}/bin/sonar-scanner"
-                }
             }
-
-                timeout(time: 10, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
+        }
+            
+        stage('abort') {
+                steps {
+                    timeout(time: 10, unit: 'MINUTES') {
+                        waitForQualityGate abortPipeline: true
+                    }    
                 }
 
-
+        }
         stage('Build') {
             steps {
                 sh 'rsync -avz -e "ssh -i /var/lib/jenkins/backend.pem" /var/lib/jenkins/workspace/chat-pipeline ec2-user@10.0.2.70:~/'
