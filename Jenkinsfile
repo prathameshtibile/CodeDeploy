@@ -8,12 +8,12 @@ pipeline {
             }
         }
 
-        stage ('Scan') {
+        stage('SonarQube analysis') {
             steps {
-                withSonarQubeEnv(installationName: 'sonarqube') {
-                    sh 'mvn clean package sonar:sonar'
+                withSonarQubeEnv('sonarqube') {
+                    sh "./ sonarqube"
                 }
-            }    
+            }
         }
         
         stage('Build') {
