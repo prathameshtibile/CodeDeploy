@@ -14,9 +14,9 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh "/opt/sonar-scanner-4.6.2.2472-linux/bin/sonar-properties"
-
-                   
+                    sh "/opt/sonar-scanner-4.6.2.2472-linux/bin/sonar-project.properties"
+                    
+                    
                     
                 }
 //                 timeout(time: 10, unit: 'MINUTES') {
