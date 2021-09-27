@@ -10,15 +10,22 @@ pipeline {
 
         stage('sonarqube') {
             environment {
-               scannerHome = tool 'sonarqubescanner'
+                scannerHome = tool 'sonarqubescanner'
             }
             steps {
-               withSonarQubeEnv('sonarqube') {
-                   sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=sonarproject -Dsonar.sources=."
-               }
-             //  timeout(time: 10, unit: 'MINUTES') {
-             //      waitForQualityGate abortPipeline: true
-             //  }
+                withSonarQubeEnv('sonarqube') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                    -D sonar.login=admin \
+                    -D sonar.password=Pass@9858 \
+                    -D sonar.projectKey=sonarproject \
+                    -D sonar.sources=src/main/java
+                    -D sonar.host.url=http://3.143.213.97:9000/
+                    
+                    
+                }
+//                 timeout(time: 10, unit: 'MINUTES') {
+//                     waitForQualityGate abortPipeline: true
+//                 }
             }
         }    
         
