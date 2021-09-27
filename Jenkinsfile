@@ -14,7 +14,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh "${scannerHome}/bin/sonar-scanner"
+                    sh "${scannerHome}/bin/sonarscanner"
                     -D sonar.login=admin \
                     -D sonar.password=Pass@9858 \
                     -D sonar.projectKey=sonarproject \
