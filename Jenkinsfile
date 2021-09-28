@@ -14,7 +14,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh "/opt/sonar-scanner-4.6.2.2472-linux/conf/"
+                    sh "/opt/sonar-scanner-4.6.2.2472-linux/conf/sonar-scanner.properties"
                     
                     
                     
